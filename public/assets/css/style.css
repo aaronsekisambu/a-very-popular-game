@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+*,
+body {
+  font-family: 'Roboto Slab', serif;
+}
+.coding-challenge {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.coding-challenge .c-title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 3rem;
+}
+.coding-challenge .game-board {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-board canvas {
+  box-shadow: 0px 0px 10px 1px #ddd;
+  border-radius: 5px;
+  width: 40%;
+}
+.game-colors {
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-colors .ch-color {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
