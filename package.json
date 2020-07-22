@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "a game based on board of nxn of tiles",
   "main": "index.js",
-  "repository": "https://github.com/itsgracian/game-tiles.git",
-  "author": "itsgracian <gracian2020@gmail.com>",
+  "repository": "https://github.com/aaronsekisambu/a-very-popular-game",
+  "author": "aaronsekisambu <aaron.sekisambu@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
