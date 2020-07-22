@@ -1,5 +1,5 @@
 import express, { Application, Request, Response } from 'express';
-import cors from 'cors'
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import routes from './modules/tiles/routes';
@@ -19,6 +19,18 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 
 app.get('/', (_req: Request, res: Response) => {
-  return res.sendFile(path.join(__dirname, '../public/index.html'));
+  try {
+    return res
+      .status(200)
+      .send({
+        status: 200,
+        welcome: 'Welcome to game of tiles, a very popular game',
+      });
+  } catch (error) {
+    return res.status(500).send({
+      status: 500,
+      error: 'server error',
+    });
+  }
 });
 export default app;
