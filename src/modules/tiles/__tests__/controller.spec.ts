@@ -9,7 +9,8 @@ describe('TileController', () => {
       expect(res.status).toEqual(200);
       expect(typeof res.status).toBe('number');
       expect(res.body).toHaveProperty('data');
-      expect(res.body.data).toHaveProperty('result');
+      expect(res.body.data).toHaveProperty('cols');
+      expect(res.body.data).toHaveProperty('rows');
       expect(res.body.data).toHaveProperty('colors');
     });
   });

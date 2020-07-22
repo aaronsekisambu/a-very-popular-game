@@ -1,4 +1,5 @@
 import express, { Application, Request, Response } from 'express';
+import cors from 'cors'
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import routes from './modules/tiles/routes';
@@ -11,6 +12,7 @@ app.use(morgan('dev'));
 // public folder
 app.use(express.static(path.resolve(__dirname, '../public')));
 // setup body parser
+app.use(cors());
 app.use(bodyParser.json());
 
 // routes setup

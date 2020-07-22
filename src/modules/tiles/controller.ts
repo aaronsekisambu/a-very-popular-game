@@ -1,20 +1,19 @@
 import { Request, Response } from 'express';
 import helper from './helper';
 export class TileController {
-  private storage: Array<string[]> = [];
+  private storage: any = {};
   private colors: Array<string> = [];
-  constructor() {
-    const { result, colors } = helper.generateMatrix(6);
-    this.storage = result;
-    this.colors = colors;
-  }
   startGame = (_req: Request, res: Response) => {
+    const { rows, cols, colors } = helper.generateMatrix(4);
+    this.storage = { rows, cols };
+    this.colors = colors;
     try {
       const { response } = helper;
       return res.status(200).json(
         response('data', {
-          result: this.storage,
-          colors: this.colors,
+          rows,
+          cols,
+          colors,
         }),
       );
     } catch (error) {

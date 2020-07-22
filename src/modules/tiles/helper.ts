@@ -17,19 +17,25 @@ export class TilesHelper {
   };
   generateMatrix = (value: number) => {
     const result: Array<string[]> = [];
-    let i: number = 0;
+    const rows = this.getArray(value);
+    const cols = this.getArray(value);
+    let maxNumColors : number = 0;
     const colors: Array<string> = [];
-    for (let c = 0; c < value / 2; c++) {
-      colors.push(this.setRandomColor());
-    }
-    for (i; i < value; i++) {
-      result.push(colors.reverse().concat(this.shuffle(colors)));
-    }
+    maxNumColors = rows.length / 2;
+    this.getArray(maxNumColors).forEach((i) => {
+      colors[i] = this.setRandomColor();
+    });
     return {
-      result,
+      rows,
+      cols,
       colors,
     };
   };
+
+  getArray = (num: number) =>
+    Array(num)
+      .fill(1)
+      .map((_i, idx) => idx);
 
   response = <T>(property: string, data: T): IGenerateResponse => {
     return {
