@@ -4,7 +4,7 @@ export class TileController {
   private storage: any = {};
   private colors: Array<string> = [];
   startGame = (_req: Request, res: Response) => {
-    const { rows, cols, colors } = helper.generateMatrix(4);
+    const { rows, cols, colors } = helper.generateMatrix(6);
     this.storage = { rows, cols };
     this.colors = colors;
     try {
